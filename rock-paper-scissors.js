@@ -1,7 +1,3 @@
-// const lostMessage = `You lost, ${computerPlay()} beats ${playerSelection}`;
-// const winMessage = `You won! ${playerSelection} beats ${computerPlay()}`;
-// const drawMessage = `You both draw, you both picked ${playerSelection}`;
-
 let playerSelection = prompt(
   "Lets play a game of Rock Paper Scissors! Which option do you choose?"
 );
@@ -37,7 +33,7 @@ function playRound(playerSelection, computerSelection) {
   } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
     return "You win! Scissors beats paper";
   } else {
-    return "You draw! You both picked SCISSORS";
+    return "You draw! You both picked scissors";
   }
 }
 
