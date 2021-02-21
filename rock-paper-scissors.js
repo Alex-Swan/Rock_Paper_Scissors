@@ -1,7 +1,7 @@
-let playerSelection = prompt(
-  "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-);
-playerSelection = playerSelection.toUpperCase();
+let playerSelection;
+let playerScore = 0;
+let computerScore = 0;
+
 const computerSelection = computerPlay();
 
 function computerPlay() {
@@ -42,4 +42,41 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  playerSelection = prompt(
+    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
+  ).toUpperCase();
+  computerPlay();
+  playRound(playerSelection, computerSelection);
+  console.log(playRound(playerSelection, computerSelection));
+
+  playerSelection = prompt(
+    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
+  ).toUpperCase();
+  computerPlay();
+  playRound(playerSelection, computerSelection);
+  console.log(playRound(playerSelection, computerSelection));
+
+  playerSelection = prompt(
+    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
+  ).toUpperCase();
+  computerPlay();
+  playRound(playerSelection, computerSelection);
+  console.log(playRound(playerSelection, computerSelection));
+
+  playerSelection = prompt(
+    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
+  ).toUpperCase();
+  computerPlay();
+  playRound(playerSelection, computerSelection);
+  console.log(playRound(playerSelection, computerSelection));
+
+  playerSelection = prompt(
+    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
+  ).toUpperCase();
+  computerPlay();
+  playRound(playerSelection, computerSelection);
+  console.log(playRound(playerSelection, computerSelection));
+}
+
+game();
