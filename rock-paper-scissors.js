@@ -32,8 +32,13 @@ function playRound(playerSelection, computerSelection) {
     return "You lose! Scissors beats paper";
   } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
     return "You win! Scissors beats paper";
-  } else {
+  } else if (
+    playerSelection === "SCISSORS" &&
+    computerSelection === "SCISSORS"
+  ) {
     return "You draw! You both picked scissors";
+  } else {
+    return 'There was an error. Please type "Rock" "Paper" or "Scissors". ';
   }
 }
 
