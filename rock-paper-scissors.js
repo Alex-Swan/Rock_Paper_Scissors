@@ -54,44 +54,19 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 /* 
-This function below plays the game 5 times and at the end posts who the winner is of the 5 rounds, it can also post a draw message.
+This function below plays the game 5 times using a for loop, at the end it posts who the winner is in the console
+ of the 5 rounds, it can also post a draw message.
 */
+
 function game() {
-  playerSelection = prompt(
-    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-  ).toUpperCase();
-  computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
-
-  playerSelection = prompt(
-    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-  ).toUpperCase();
-  computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
-
-  playerSelection = prompt(
-    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-  ).toUpperCase();
-  computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
-
-  playerSelection = prompt(
-    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-  ).toUpperCase();
-  computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
-
-  playerSelection = prompt(
-    "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-  ).toUpperCase();
-  computerSelection = computerPlay();
-  playRound(playerSelection, computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
-
+  for (let i = 0; i < 5; i++) {
+    playerSelection = prompt(
+      "Lets play a game of Rock Paper Scissors! Which option do you choose?"
+    ).toUpperCase();
+    computerSelection = computerPlay();
+    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+  }
   if (playerScore > computerScore) {
     console.log(
       `Congratulations!! You win, you got ${
