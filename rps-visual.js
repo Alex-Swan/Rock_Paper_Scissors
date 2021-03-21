@@ -6,6 +6,7 @@ let computerSelection;
 const rockButton = document.querySelector("#rock-btn");
 const paperButton = document.querySelector("#paper-btn");
 const scissorButton = document.querySelector("#scissors-btn");
+const message = document.querySelector("#message");
 
 // This function below randomly chooses between ROCK PAPER or SCISSORS
 function computerPlay() {
@@ -42,26 +43,26 @@ after this it posts to the console who won that round or it was a draw.
 */
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == "ROCK" && computerSelection == "PAPER") {
-    computerScore = computerScore += 1;
+    computerScore++;
     return "You lose! Paper beats rock";
   } else if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-    playerScore = playerScore += 1;
+    playerScore++;
     return "You win! Rock beats paper";
   } else if (playerSelection === "ROCK" && computerSelection === "ROCK") {
     return "You draw! You both picked rock";
   } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-    computerScore = computerScore += 1;
+    computerScore++;
     return "You lose! Scissors beats PAPER";
   } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-    playerScore = playerScore += 1;
+    playerScore++;
     return "You win! Paper beats rock";
   } else if (playerSelection === "PAPER" && computerSelection === "PAPER") {
     return "You draw! You both picked paper";
   } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-    computerScore = computerScore += 1;
+    computerScore++;
     return "You lose! Scissors beats paper";
   } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
-    playerScore = playerScore += 1;
+    playerScore++;
     return "You win! Scissors beats paper";
   } else if (
     playerSelection === "SCISSORS" &&
@@ -71,8 +72,30 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+/* This function plays 1 round of rock paper scissors and then posts to the DOM 
+    who won that round, when the winner of 5 rounds has been chosen and alert message
+    is sent informing the user who won the whole 5 round game.
+*/
 function game() {
   computerSelection = computerPlay();
   playRound(playerSelection, computerSelection);
-  console.log(playRound(playerSelection, computerSelection));
+  message.innerHTML = `<strong>${playRound(
+    playerSelection,
+    computerSelection
+  )} </strong> <br>
+  Your score is ${playerScore / 2}. <br>
+  The computers score is ${computerScore / 2}`;
+  if (playerScore / 2 == 5) {
+    alert("CONGRATULATIONS!! You got the top score of 5");
+    playerScore = 0;
+    computerScore = 0;
+    message.textContent = "Want to play another 5 rounds?";
+    return;
+  } else if (computerScore / 2 == 5) {
+    alert("Im sorry, the computer won 5 rounds, please try again");
+    playerScore = 0;
+    computerScore = 0;
+    message.textContent = "Want to play another 5 rounds?";
+    return;
+  }
 }
