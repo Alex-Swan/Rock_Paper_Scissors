@@ -3,6 +3,24 @@ let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
 let computerSelection = computerPlay();
+const rockButton = document.querySelector("#rock-btn");
+const paperButton = document.querySelector("#paper-btn");
+const scissorButton = document.querySelector("#scissors-btn");
+
+rockButton.addEventListener("click", () => {
+  playerSelection = "ROCK";
+  console.log(playerSelection);
+});
+
+paperButton.addEventListener("click", () => {
+  playerSelection = "PAPER";
+  console.log(playerSelection);
+});
+
+scissorButton.addEventListener("click", () => {
+  playerSelection = "SCISSORS";
+  console.log(playerSelection);
+});
 
 // This function below randomly chooses between ROCK PAPER or SCISSORS
 function computerPlay() {
@@ -15,7 +33,6 @@ function computerPlay() {
     return "SCISSORS";
   }
 }
-
 /* 
 This function below sees what the player input is and what the random computer option, it then adds 1 to the winners points
 after this it posts to the console who won that round or it was a draw. It also posts an error message if player input is
@@ -53,37 +70,3 @@ function playRound(playerSelection, computerSelection) {
     return 'There was an error. Please type "Rock" "Paper" or "Scissors". ';
   }
 }
-/* 
-This function below plays the game 5 times using a for loop, at the end it posts who the winner is in the console
- of the 5 rounds, it can also post a draw message.
-*/
-
-// function game() {
-//   for (let i = 0; i < 5; i++) {
-//     playerSelection = prompt(
-//       "Lets play a game of Rock Paper Scissors! Which option do you choose?"
-//     ).toUpperCase();
-//     computerSelection = computerPlay();
-//     playRound(playerSelection, computerSelection);
-//     console.log(playRound(playerSelection, computerSelection));
-//   }
-//   if (playerScore > computerScore) {
-//     console.log(
-//       `Congratulations!! You win, you got ${
-//         playerScore / 2
-//       } and the computer got ${computerScore / 2}!`
-//     );
-//   } else if (playerScore < computerScore) {
-//     console.log(
-//       `Unfortunately you lost! You got ${
-//         playerScore / 2
-//       } and the computer got ${computerScore / 2}. Bad luck! `
-//     );
-//   } else if (playerScore === computerScore) {
-//     console.log(
-//       `You both drew! Wowzer! You both got ${
-//         playerScore / 2
-//       }. How about another go?`
-//     );
-//   }
-// }
