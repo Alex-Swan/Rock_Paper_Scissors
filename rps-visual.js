@@ -2,25 +2,10 @@
 let playerSelection;
 let playerScore = 0;
 let computerScore = 0;
-let computerSelection = computerPlay();
+let computerSelection;
 const rockButton = document.querySelector("#rock-btn");
 const paperButton = document.querySelector("#paper-btn");
 const scissorButton = document.querySelector("#scissors-btn");
-
-rockButton.addEventListener("click", () => {
-  playerSelection = "ROCK";
-  console.log(playerSelection);
-});
-
-paperButton.addEventListener("click", () => {
-  playerSelection = "PAPER";
-  console.log(playerSelection);
-});
-
-scissorButton.addEventListener("click", () => {
-  playerSelection = "SCISSORS";
-  console.log(playerSelection);
-});
 
 // This function below randomly chooses between ROCK PAPER or SCISSORS
 function computerPlay() {
@@ -33,10 +18,27 @@ function computerPlay() {
     return "SCISSORS";
   }
 }
+
+// These are the event listeners for the ROCK PAPER SCISSORS buttons on the page.
+// When a button has been clicked it changes the playerSelection to button option.
+rockButton.addEventListener("click", () => {
+  playerSelection = "ROCK";
+  game();
+});
+
+paperButton.addEventListener("click", () => {
+  playerSelection = "PAPER";
+  game();
+});
+
+scissorButton.addEventListener("click", () => {
+  playerSelection = "SCISSORS";
+  game();
+});
+
 /* 
-This function below sees what the player input is and what the random computer option, it then adds 1 to the winners points
-after this it posts to the console who won that round or it was a draw. It also posts an error message if player input is
-not recognized 
+This function below sees what the button the player picked and what the random computer option, it then adds 1 to the winners points
+after this it posts to the console who won that round or it was a draw.
 */
 function playRound(playerSelection, computerSelection) {
   if (playerSelection == "ROCK" && computerSelection == "PAPER") {
@@ -66,7 +68,11 @@ function playRound(playerSelection, computerSelection) {
     computerSelection === "SCISSORS"
   ) {
     return "You draw! You both picked scissors";
-  } else {
-    return 'There was an error. Please type "Rock" "Paper" or "Scissors". ';
   }
+}
+
+function game() {
+  computerSelection = computerPlay();
+  playRound(playerSelection, computerSelection);
+  console.log(playRound(playerSelection, computerSelection));
 }
