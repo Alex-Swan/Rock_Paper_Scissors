@@ -4,19 +4,37 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+      integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <h1>Lets play Rock Paper Scissors!</h1>
+    <div class="container">
+      <h1>Lets play Rock Paper Scissors!</h1>
 
-    <div>
-      <h2>Pick an option to start the round | Best out of 5 rounds</h2>
-      <button id="rock-btn">Rock</button>
-      <button id="paper-btn">Paper</button>
-      <button id="scissors-btn">Scissors</button>
-    </div>
-    <div>
-      <p id="message"></p>
+      
+        <h2>Pick an option to start the round | Best out of 5 rounds</h2>
+        <div class="button-container">
+          <button class="buttons" id="rock-btn">
+            <i class="fas fa-hand-rock"></i>
+          </button>
+          <button class="buttons" id="paper-btn">
+            <i class="fas fa-hand-paper"></i>
+          </button>
+          <button class="buttons" id="scissors-btn">
+            <i class="fas fa-hand-scissors"></i>
+          </button>
+        </div> 
+        <p id="message"></p>
+      </div>
+      
+       
+      </div>
     </div>
     <script src="rps-visual.js"></script>
   </body>
