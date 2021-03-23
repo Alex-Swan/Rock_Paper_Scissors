@@ -83,8 +83,8 @@ function game() {
     playerSelection,
     computerSelection
   )} </strong> <br>
-  Your score is ${playerScore / 2}. <br>
-  The computers score is ${computerScore / 2}`;
+  Your score is <strong>${playerScore / 2}</strong>. <br>
+  The computers score is <strong>${computerScore / 2}</strong>`;
   if (playerScore / 2 == 5) {
     alert("CONGRATULATIONS!! You got the top score of 5");
     playerScore = 0;
@@ -92,7 +92,7 @@ function game() {
     message.textContent = "Want to play another 5 rounds?";
     return;
   } else if (computerScore / 2 == 5) {
-    alert("Im sorry, the computer won 5 rounds, please try again");
+    alert("I'm sorry, the computer won 5 rounds, please try again!");
     playerScore = 0;
     computerScore = 0;
     message.textContent = "Want to play another 5 rounds?";
